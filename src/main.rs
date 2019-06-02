@@ -6,6 +6,10 @@ mod global_variables;
 mod stack_and_heap;
 mod control_flow;
 mod datastructures;
+mod unions;
+mod options;
+mod arrays;
+mod vectors;
 
 fn main() {
     helloworld::main();
@@ -16,4 +20,8 @@ fn main() {
     stack_and_heap::main();
     control_flow::main();
     datastructures::main();
+    unions::main();
+    options::main();
+    arrays::main();
+    vectors::main();
 }
