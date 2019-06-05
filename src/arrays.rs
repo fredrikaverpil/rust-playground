@@ -10,16 +10,16 @@ fn array() {
 
     println!("a has {} elements, first is {}", a.len(), a[0]);
 
-    print!("{:?}", a);  // debug print will print the entire array
+    println!("{:?}", a);  // debug print will print the entire array
 
     if a != [1, 2, 3, 4, 5] {
-        print!("does not match");
+        println!("does not match");
     }
 
     let b = [1; 10];  // add 10 elements with the value of 1
 
     for i in 0..b.len() {
-        print!("{}", b[i]);
+        println!("{}", b[i]);
     }
 
     println!("b took up {} bytes", mem::size_of_val(&b));  // 40 bytes
@@ -35,12 +35,12 @@ fn array() {
         [0.0, 2.0, 0.0]
     ];
 
-    print!("{:?}", mtx);
+    println!("{:?}", mtx);
 
     for i in 0..mtx.len() {
         for j in 0..mtx[i].len() {
             if i == j {
-                print!("mtx[{}][{}] = {}", i, j, mtx[i][j]);
+                println!("mtx[{}][{}] = {}", i, j, mtx[i][j]);
             }
         }
     }

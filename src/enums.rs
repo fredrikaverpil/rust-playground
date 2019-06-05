@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused)]
 
-enum Color {
+pub enum Color {
     Red,
     Green,
     Blue,
@@ -20,6 +20,7 @@ fn enumerations() {
         Color::Blue => println!("b"),
         Color::RgbColor(0, 0, 0)
         | Color::CmykColor{cyan: _, magenta: _, yellow: _, black: 255} => println!("black"),
+        // | Color::CmykColor{black: 255,..} => println!("black"),  // the .. indicates we are only interested in the black value
         Color::RgbColor (r, g, b) => println!("rgb {},{},{}", r, g, b),
         Color::CmykColor {cyan, magenta, yellow, black} => println!("cmyk {},{},{},{}", cyan, magenta, yellow, black)
     }

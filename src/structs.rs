@@ -1,14 +1,16 @@
 #![allow(dead_code)]
 #![allow(unused)]
 
-struct Point {
-    x: f64,
-    y: f64
+// Note, structs and their attributes are made public ("pub") because used elsewhere too
+
+pub struct Point {
+    pub x: f64,
+    pub y: f64
 }
 
-struct Line {
-    start: Point,
-    end: Point
+pub struct Line {
+    pub start: Point,
+    pub end: Point
 }
 
 fn structures() {

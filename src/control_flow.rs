@@ -18,7 +18,7 @@ fn if_statement() {
         if temp > 20 {"hot"} else if temp < 10 {"cold"} else {"ok"}
     );
 
-    print!("it is {}",
+    println!("it is {}",
         if temp > 20 {
             if temp > 30 {"very hot"} else {"hot"}
         } else if temp < 10 {"cold"} else {"ok"}
@@ -51,7 +51,7 @@ fn for_loop() {
     {
         if x == 3 { continue; }
         else if x == 8 { break; }
-        print!("x = {}", x);
+        println!("x = {}", x);
     }
 
     for (pos, y) in (30..40).enumerate() // 1: 31, 2: 32, 3: 33 .. 9: 39
@@ -68,7 +68,7 @@ fn match_statement() {
         1...999 => "Unknown",  // includes 999
         _ => "Invalid"
     };
-    print!("Country with code {} is {}", country_code, country)
+    println!("Country with code {} is {}", country_code, country)
 }
 
 pub fn main() {

@@ -9,28 +9,28 @@ fn vectors() {
     a.push(2);  // add value
     a.push(3);  // add value
 
-    print!("{:?}", a);
+    println!("{:?}", a);
 
     a.push(4);
 
-    print!("{:?}", a);
+    println!("{:?}", a);
 
-    print!("a[0] = {}", a[0]);
+    println!("a[0] = {}", a[0]);
 
     // What is the type of the index?
     // usize isize
     let idx:i32 = 0;
-    // print!("a[0] = {}", a[idx]);  // will not work, cannot use signed value
+    // println!("a[0] = {}", a[idx]);  // will not work, cannot use signed value
 
     let idx:usize = 0;
-    print!("a[0] = {}", a[idx]);  // ok!
+    println!("a[0] = {}", a[idx]);  // ok!
 
     // a[6]; // panic
     a.get(6);  // returns Option
 
     match a.get(6) {
-        Some(x) => print!("a[6] = {}", x),
-        None => print!("error, no such element")
+        Some(x) => println!("a[6] = {}", x),
+        None => println!("error, no such element")
     }
 
     for x in &a {

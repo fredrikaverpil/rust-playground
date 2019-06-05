@@ -11,6 +11,18 @@ mod unions;
 mod options;
 mod arrays;
 mod vectors;
+mod slices;
+mod strings;
+mod tuples;
+mod pattern_matching;
+mod generics;
+mod functions;
+mod methods;
+mod closures;
+mod higher_order_functions;
+mod traits;
+mod operator_overloading;
+mod static_dynamic_dispatch;
 
 fn main() {
     helloworld::main();
@@ -26,4 +38,16 @@ fn main() {
     options::main();
     arrays::main();
     vectors::main();
+    slices::main();
+    strings::main();
+    tuples::main();
+    pattern_matching::main();
+    generics::main();
+    functions::main();
+    methods::main();
+    closures::main();
+    higher_order_functions::main();
+    traits::main();
+    operator_overloading::main();
+    static_dynamic_dispatch::main()
 }

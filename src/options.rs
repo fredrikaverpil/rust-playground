@@ -10,12 +10,12 @@ fn option() {
     let result: Option<f64> =
         if y != 0.0 { Some(x/y) } else { None };
 
-    print!("{:?}", result);
+    println!("{:?}", result);
 
     // How can you destructure and get the result of the value?
     match result {
         Some(z) => println!("{}/{} = {}", x, y, z),
-        None => print!("cannot divide {} by {}", x, y)
+        None => println!("cannot divide {} by {}", x, y)
     }
 
     // if let / while let

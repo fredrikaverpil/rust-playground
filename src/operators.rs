@@ -23,7 +23,7 @@ pub fn main() {
     let c = 1 | 2;  // | OR & AND ^ XOR ! NOR
     println!("1|2 = {}", c);
     let two_to_10 = 1 << 10;
-    print!("2^10 = {}", two_to_10);
+    println!("2^10 = {}", two_to_10);
 
     // logical
     let pi_less_4 = std::f64::consts::PI < 4.0;  // true
