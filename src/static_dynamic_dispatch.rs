@@ -50,7 +50,43 @@ fn dynamic_dispatch() {
     print_it_dynamic(&b);
 }
 
+struct Circle { radius: f64 }
+struct Square { side: f64 }
+
+trait Shape {
+    fn area(&self) -> f64;
+}
+
+impl Shape for Circle {
+    fn area(&self) -> f64 {
+        self.radius * self.radius * std::f64::consts::PI
+    }
+}
+
+impl Shape for Square {
+    fn area(&self) -> f64 {
+        self.side * self.side
+    }
+}
+
+fn dynamic_dispatch_only() {
+    let shapes: [&Shape; 4] = [
+        &Circle{radius: 1.0},
+        &Square{side: 3.0},
+        &Circle{radius: 2.0},
+        &Square{side: 4.0}
+    ];
+    for (i, shape) in shapes.iter().enumerate() {
+        println!("Shape #{} has area {}", i, shape.area());  // dynamic dispatch
+    }
+}
+
+
 pub fn main() {
+    // solve the same problem using either;
     static_dispatch();
     dynamic_dispatch();
+
+    // problem that can only be solved with dynamic dispatch
+    dynamic_dispatch_only();
 }
