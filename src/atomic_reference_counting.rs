@@ -35,7 +35,7 @@ fn arc() {
     let person = PersonArc::new(name.clone());
 
     let t = thread::spawn(move || {
-        person.greet();  // Rc is not thread safe and thus this will not compile!
+        person.greet();
     });
     println!("Name = {}", name);
 
