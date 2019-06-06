@@ -23,6 +23,8 @@ mod higher_order_functions;
 mod traits;
 mod operator_overloading;
 mod static_dynamic_dispatch;
+mod ownership_and_memory_safety;
+mod borrowing;
 
 fn main() {
     helloworld::main();
@@ -49,5 +51,7 @@ fn main() {
     higher_order_functions::main();
     traits::main();
     operator_overloading::main();
-    static_dynamic_dispatch::main()
+    static_dynamic_dispatch::main();
+    ownership_and_memory_safety::main();
+    borrowing::main();
 }
