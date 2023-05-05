@@ -2,7 +2,7 @@
 name = "rust-syntax"
 version = "0.1.0"
 authors = ["Fredrik Averpil <fredrik@averpil.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 rand = "0.6.5"  # from https://crates.io

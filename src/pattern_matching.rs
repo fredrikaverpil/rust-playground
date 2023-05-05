@@ -7,7 +7,7 @@ fn how_many(x: i32) -> &'static str {
         0 => "no",
         1 | 2 => "one or two",
         12 => "a dozen",
-        z @ 9...11 => "lots of",
+        z @ 9..=11 => "lots of",
         _ if (x % 2 == 0) => "some",
         _ => "a few"
     }

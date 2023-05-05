@@ -65,7 +65,7 @@ fn match_statement() {
     let country = match country_code {
         44 => "UK",
         46 => "Sweden",
-        1...999 => "Unknown",  // includes 999
+        1..=999 => "Unknown",  // includes 999
         _ => "Invalid"
     };
     println!("Country with code {} is {}", country_code, country)

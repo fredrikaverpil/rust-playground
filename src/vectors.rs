@@ -26,7 +26,7 @@ fn vectors() {
     println!("a[0] = {}", a[idx]);  // ok!
 
     // a[6]; // panic
-    a.get(6);  // returns Option
+    let option_slice = a.get(6);  // returns Option
 
     match a.get(6) {
         Some(x) => println!("a[6] = {}", x),

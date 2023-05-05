@@ -24,7 +24,7 @@ fn print_it<T: Printable>(z: T) {
 }  // monomorphisation (as it supports both i32 and String)
 
 // Dynamic dispatch, runtime, expensive call
-fn print_it_dynamic(z: &Printable) {
+fn print_it_dynamic(z: &dyn Printable) {
     println!("{}", z.format());
 }
 
@@ -70,7 +70,7 @@ impl Shape for Square {
 }
 
 fn dynamic_dispatch_only() {
-    let shapes: [&Shape; 4] = [
+    let shapes: [&dyn Shape; 4] = [
         &Circle{radius: 1.0},
         &Square{side: 3.0},
         &Circle{radius: 2.0},
