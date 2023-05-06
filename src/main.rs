@@ -1,10 +1,10 @@
 mod helloworld;
-mod core_datatypes;
-mod operators;
-mod scope_and_shadowing;
-mod global_variables;
-mod stack_and_heap;
-mod control_flow;
+mod mod01_core_datatypes;
+mod mod02_operators;
+mod mod03_scope_and_shadowing;
+mod mod04_global_variables;
+mod mod05_stack_and_heap;
+mod mod06_control_flow;
 mod structs;
 mod enums;
 mod unions;
@@ -36,14 +36,14 @@ fn main() {
     helloworld::main();
 
     // Datatypes
-    core_datatypes::main();
-    operators::main();
-    scope_and_shadowing::main();
-    global_variables::main();
-    stack_and_heap::main();
+    mod01_core_datatypes::main();
+    mod02_operators::main();
+    mod03_scope_and_shadowing::main();
+    mod04_global_variables::main();
+    mod05_stack_and_heap::main();
 
     // Control flow
-    control_flow::main();
+    mod06_control_flow::main();
 
     // Data structures
     structs::main();

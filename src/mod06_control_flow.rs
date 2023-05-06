@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 fn if_statement() {
     let temp = 15;
 
@@ -68,7 +70,50 @@ fn match_statement() {
         1..=999 => "Unknown",  // includes 999
         _ => "Invalid"
     };
-    println!("Country with code {} is {}", country_code, country)
+    println!("Country with code {} is {}", country_code, country);
+}
+
+enum State {
+    Locked,
+    Failed,
+    Unlocked
+}
+
+fn combination_lock() {
+    let code = String::from("1234");
+    let mut state = State::Locked;
+    let mut entry = String::new();
+
+    loop {
+        match state {
+            State::Locked => {
+                let mut input = String::new();
+                match std::io::stdin().read_line(&mut input) {
+                    Ok(_) => {
+                        entry.push_str(&input.trim_end());
+                    }
+                    Err(_) => continue
+                }
+                if entry == code {
+                    state = State::Unlocked;
+                    continue;
+                }
+                if !code.starts_with(&entry) {
+                    state = State::Failed;
+                }
+            }
+            State::Failed => {
+                println!("FAILED");
+                entry.clear();
+                state = State::Locked;
+                continue;
+            }
+            State::Unlocked => {
+                println!("UNLOCKED");
+                return;
+            }
+        }
+    }
 }
 
 pub fn main() {
@@ -76,4 +121,5 @@ pub fn main() {
     while_and_loop();
     for_loop();
     match_statement();
+    // combination_lock();
 }
