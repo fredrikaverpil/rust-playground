@@ -28,6 +28,7 @@ fn tuples() {
 }
 
 fn sum_and_product(x: i32, y: i32) -> (i32, i32) {
+    // return a tuple
     (x + y, x * y)
 }
 

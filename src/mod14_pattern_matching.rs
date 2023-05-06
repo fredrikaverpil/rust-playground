@@ -1,6 +1,6 @@
 #![allow(unused)]
 
-use crate::enums;
+use crate::mod08_enums;
 
 fn how_many(x: i32) -> &'static str {
     match x {
@@ -23,16 +23,17 @@ fn where_is(point: (i32, i32)) {
     }
 }
 
-fn which_color(c: enums::Color) {
+fn which_color(c: mod08_enums::Color) {
     match c {
-        enums::Color::Red => println!("r"),
-        enums::Color::Green => println!("g"),
-        enums::Color::Blue => println!("b"),
-        enums::Color::RgbColor(0, 0, 0) | enums::Color::CmykColor { black: 255, .. } => {
+        mod08_enums::Color::Red => println!("r"),
+        mod08_enums::Color::Green => println!("g"),
+        mod08_enums::Color::Blue => println!("b"),
+        mod08_enums::Color::RgbColor(0, 0, 0)
+        | mod08_enums::Color::CmykColor { black: 255, .. } => {
             println!("black")
         } // the .. indicates we are only interested in the black value
-        enums::Color::RgbColor(r, g, b) => println!("rgb {},{},{}", r, g, b),
-        enums::Color::CmykColor {
+        mod08_enums::Color::RgbColor(r, g, b) => println!("rgb {},{},{}", r, g, b),
+        mod08_enums::Color::CmykColor {
             cyan,
             magenta,
             yellow,
@@ -52,16 +53,16 @@ fn pattern_matching() {
     where_is((1, 0));
     where_is((5, 6));
 
-    let mut c: enums::Color = enums::Color::CmykColor {
+    let mut c: mod08_enums::Color = mod08_enums::Color::CmykColor {
         cyan: 0,
         magenta: 128,
         yellow: 0,
         black: 0,
     };
     which_color(c);
-    c = enums::Color::RgbColor(150, 150, 150);
+    c = mod08_enums::Color::RgbColor(150, 150, 150);
     which_color(c);
-    c = enums::Color::RgbColor(0, 0, 0);
+    c = mod08_enums::Color::RgbColor(0, 0, 0);
     which_color(c);
 }
 

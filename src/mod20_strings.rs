@@ -1,7 +1,9 @@
 #![allow(unused_variables)]
 
 fn strings() {
-    // there are two string types
+    // there are two string types;
+    // 1. &str = string slice
+    // 2. String = heap allocated string
 
     // statically allocated, included in our compiled program, not created during runtime
     // cannot be re-assigned, cannot be manipulated
@@ -16,7 +18,7 @@ fn strings() {
         println!("first letter is {}", first_char)
     }
 
-    // heap allocated construct "String"
+    // heap allocated construct "String", UTF-8 encoded
     let mut letters = String::new();
 
     let mut a = 'a' as u8;

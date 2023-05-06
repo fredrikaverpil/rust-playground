@@ -1,5 +1,5 @@
-extern crate phrases;
-extern crate rand; // downloaded crate // our own crate
+extern crate phrases; // our own crate
+extern crate rand; // downloaded crate
 
 use phrases::greetings::french;
 use rand::Rng;

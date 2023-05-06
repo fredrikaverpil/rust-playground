@@ -41,8 +41,6 @@ fn ownership4() {
 
     let v = foo(v);
     println!("{:?}", v);
-
-    // see borrowing.rs to see more solutions
 }
 
 pub fn main() {

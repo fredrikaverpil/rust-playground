@@ -30,7 +30,7 @@ fn enumerations() {
         Color::Blue => println!("b"),
         Color::RgbColor(0, 0, 0)
         | Color::CmykColor {
-            cyan: _,
+            cyan: _, // _ means it can be any value
             magenta: _,
             yellow: _,
             black: 255,

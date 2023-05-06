@@ -1,7 +1,10 @@
 #[allow(unused_variables)]
 
+// like list in python
+
 fn vectors() {
     // Think of vectors as a stack where you push values on to the top
+    // Or a list where you append to the head
 
     let mut a = Vec::new();
 
@@ -40,8 +43,12 @@ fn vectors() {
     a.push(77);
     println!("{:?}", a);
 
-    let last_element = a.pop(); // Option: Some(77)
+    let last_element = a.pop(); // Returns an Option, in this case Some(77)
+                                // Rust does not crash if you try to pop an empty vector
     println!("last element is {:?}, a = {:?}", last_element, a);
+
+    a.insert(0, 987); // insert at index 0
+    println!("{:?}", a);
 
     // reverse
     while let Some(x) = a.pop() {

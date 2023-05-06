@@ -1,4 +1,5 @@
 fn print_value(x: i32) {
+    // x goes onto the stack
     println!("{}", x);
 }
 
@@ -8,6 +9,7 @@ fn increase(x: &mut i32) {
 
 fn product(x: i32, y: i32) -> i32 {
     x * y // return statement does not end with semicolon ;
+          // could also be written as return x * y;
 }
 
 fn functions() {

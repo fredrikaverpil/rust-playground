@@ -4,7 +4,8 @@ fn option() {
     let x = 3.0;
     let y = 2.0;
 
-    // Option can contain Some(z) or None
+    // We cannot divide by zero
+    // Option can contain Some(z) or None if we try to divide by zero
     let result: Option<f64> = if y != 0.0 { Some(x / y) } else { None };
 
     println!("{:?}", result);

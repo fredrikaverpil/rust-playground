@@ -5,9 +5,11 @@ fn say_hello() {
 }
 
 fn closures() {
-    let sh = say_hello;
+    let sh = say_hello; // it is possible to create a function and store it in a variable
     sh();
 
+    // lambda-like function which specifies the argument type of x as i32 and return type as i32
+    // followed by the body of the function
     let plus_one = |x: i32| -> i32 { x + 1 }; // this function is available in closures function only
     let a = 6;
     println!("{} + 1 = {}", a, plus_one(a));

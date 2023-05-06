@@ -24,7 +24,7 @@ fn array() {
 
     println!("b took up {} bytes", mem::size_of_val(&b)); // 40 bytes
 
-    let c = [1u16; 10];
+    let c = [1u16; 10]; // add 10 elements with the value of 1
     println!("c took up {} bytes", mem::size_of_val(&c)); // 20 bytes
 
     // matrix

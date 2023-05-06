@@ -36,7 +36,7 @@ fn lifetime() {
 
 fn lifetime2() {
     /*
-        if lifetime is not defined in Per
+        if lifetime is not defined in Person
     */
     let mut z: &String;
     {

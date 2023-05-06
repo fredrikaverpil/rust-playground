@@ -1,4 +1,4 @@
-use std::ops::Add;
+use std::ops::Add; // the Add trait
 
 #[derive(Debug)]
 struct Point {
@@ -17,13 +17,13 @@ impl Add for Point {
     }
 }
 
-fn oo() {
+fn operator_overloading() {
     let p1 = Point { x: 1.0, y: 2.0 };
     let p2 = Point { x: 1.0, y: 2.0 };
     let p3 = p1 + p2;
-    println!("{:?}", p3);
+    println!("{:?}", p3); // Point { x: 2.0, y: 4.0 }
 }
 
 pub fn main() {
-    oo()
+    operator_overloading()
 }
