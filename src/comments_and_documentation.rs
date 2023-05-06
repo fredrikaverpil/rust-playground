@@ -14,12 +14,13 @@
 #![allow(unused)]
 
 pub fn main() {
-
     // comment
 
     /*  comment block
-        until closed */
+    until closed */
 
     /// This function returns `1` (markdown ok!)
-    fn give_one() -> i32 { 1 };
+    fn give_one() -> i32 {
+        1
+    };
 }

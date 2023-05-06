@@ -4,7 +4,7 @@ pub fn main() {
         // new scope!
         let _b = 456;
 
-        let _a = 0;  // shadowing of _a in this scope only
+        let _a = 0; // shadowing of _a in this scope only
     }
     // _b not available here!
 }

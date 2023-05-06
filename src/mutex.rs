@@ -4,8 +4,8 @@
 #![allow(unused)]
 
 use crate::reference_counting;
-use std::rc::Rc;  // Rc is not thread safe
-use std::sync::{Arc, Mutex};  // Arc is thread safe
+use std::rc::Rc; // Rc is not thread safe
+use std::sync::{Arc, Mutex}; // Arc is thread safe
 use std::thread;
 
 struct Person {
@@ -15,7 +15,10 @@ struct Person {
 
 impl Person {
     fn new(name: Arc<String>, state: Arc<Mutex<String>>) -> Person {
-        Person { name: name, state: state }
+        Person {
+            name: name,
+            state: state,
+        }
     }
 
     fn greet(&self) {
@@ -32,9 +35,13 @@ fn mutex() {
     let person = Person::new(name.clone(), state.clone());
 
     let t = thread::spawn(move || {
-        person.greet();  // Rc is not thread safe and thus this will not compile!
+        person.greet(); // Rc is not thread safe and thus this will not compile!
     });
-    println!("Name = {}, state = {}", name, state.lock().unwrap().as_str());
+    println!(
+        "Name = {}, state = {}",
+        name,
+        state.lock().unwrap().as_str()
+    );
 
     t.join().unwrap();
 }

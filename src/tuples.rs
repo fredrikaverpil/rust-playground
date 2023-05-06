@@ -23,13 +23,12 @@ fn tuples() {
     println!("{:?}", foo);
 
     // one-element tuple
-    let meaning = (42,);  // cannot skip the trailing comma
+    let meaning = (42,); // cannot skip the trailing comma
     println!("{:?}", meaning);
-
 }
 
 fn sum_and_product(x: i32, y: i32) -> (i32, i32) {
-    (x+y, x*y)
+    (x + y, x * y)
 }
 
 pub fn main() {

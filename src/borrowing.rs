@@ -1,7 +1,3 @@
-
-
-
-
 fn borrowing_immutable() {
     let print_vector = |x:&Vec<i32>|  // make arg type into reference of vector by prefixing it with &
     {
@@ -11,7 +7,7 @@ fn borrowing_immutable() {
 
     let v = vec![1, 2, 3];
 
-    print_vector(&v);  // let print_vector borrow v for a while by passing a reference of v
+    print_vector(&v); // let print_vector borrow v for a while by passing a reference of v
 
     println!("{:?}", v);
 }
@@ -22,12 +18,8 @@ fn borrowing_mutable() {
         let b = &mut a;
         *b += 2;
     }
-    println!("a = {}", a);  // b = 42
+    println!("a = {}", a); // b = 42
 }
-
-
-
-
 
 pub fn main() {
     borrowing_immutable();

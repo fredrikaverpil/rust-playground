@@ -5,8 +5,8 @@ fn strings() {
 
     // statically allocated, included in our compiled program, not created during runtime
     // cannot be re-assigned, cannot be manipulated
-    let s:&'static str = "hello there";  // str = string slice
-    // let h = s[0];  // will not work, as you would have to index the bytes...
+    let s: &'static str = "hello there"; // str = string slice
+                                         // let h = s[0];  // will not work, as you would have to index the bytes...
 
     for c in s.chars().rev() {
         println!("{}", c);
@@ -15,7 +15,6 @@ fn strings() {
     if let Some(first_char) = s.chars().nth(0) {
         println!("first letter is {}", first_char)
     }
-
 
     // heap allocated construct "String"
     let mut letters = String::new();
@@ -27,7 +26,6 @@ fn strings() {
         a += 1;
     }
     println!("{}", letters);
-
 
     // conversion between &str and String
     let u: &str = &letters;

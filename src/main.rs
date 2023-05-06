@@ -1,36 +1,36 @@
+mod arrays;
+mod atomic_reference_counting;
+mod borrowing;
+mod closures;
+mod comments_and_documentation;
+mod enums;
+mod functions;
+mod generics;
 mod helloworld;
+mod higher_order_functions;
+mod lifetime;
+mod methods;
 mod mod01_core_datatypes;
 mod mod02_operators;
 mod mod03_scope_and_shadowing;
 mod mod04_global_variables;
 mod mod05_stack_and_heap;
 mod mod06_control_flow;
-mod structs;
-mod enums;
-mod unions;
-mod options;
-mod arrays;
-mod vectors;
-mod slices;
-mod strings;
-mod tuples;
-mod pattern_matching;
-mod generics;
-mod functions;
-mod methods;
-mod closures;
-mod higher_order_functions;
-mod traits;
-mod operator_overloading;
-mod static_dynamic_dispatch;
-mod ownership_and_memory_safety;
-mod borrowing;
-mod lifetime;
-mod reference_counting;
-mod atomic_reference_counting;
-mod mutex;
 mod modules;
-mod comments_and_documentation;
+mod mutex;
+mod operator_overloading;
+mod options;
+mod ownership_and_memory_safety;
+mod pattern_matching;
+mod reference_counting;
+mod slices;
+mod static_dynamic_dispatch;
+mod strings;
+mod structs;
+mod traits;
+mod tuples;
+mod unions;
+mod vectors;
 
 fn main() {
     helloworld::main();
@@ -53,7 +53,7 @@ fn main() {
     arrays::main();
     vectors::main();
     slices::main();
-    strings::main();  // https://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html
+    strings::main(); // https://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html
     tuples::main();
     pattern_matching::main();
     generics::main();
@@ -85,5 +85,4 @@ fn main() {
 
     // Comments and documentation
     comments_and_documentation::main()
-
 }

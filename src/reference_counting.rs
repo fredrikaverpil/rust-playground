@@ -3,12 +3,12 @@
 use std::rc::Rc;
 
 struct Person {
-    name: String
+    name: String,
 }
 
 impl Person {
     fn new(name: String) -> Person {
-        Person{ name: name }
+        Person { name: name }
     }
 
     fn greet(&self) {
@@ -23,9 +23,8 @@ fn without_rc() {
     // println!("name = {}", name)  // does not compile, because using moved value for "name"
 }
 
-
 pub struct PersonRc {
-    name: Rc<String>
+    name: Rc<String>,
 }
 
 impl PersonRc {
@@ -38,18 +37,28 @@ impl PersonRc {
     }
 }
 
-
 fn with_rc() {
     let name = Rc::new("John".to_string());
-    println!("Name = {}, name has has {} strong pointers", name, Rc::strong_count(&name));  // 1 strong pointer
+    println!(
+        "Name = {}, name has has {} strong pointers",
+        name,
+        Rc::strong_count(&name)
+    ); // 1 strong pointer
     {
-        let person = PersonRc::new(name.clone());  // increase the reference count with .clone()
-        println!("Name = {}, name has has {} strong pointers", name, Rc::strong_count(&name));  // 2 strong pointers
+        let person = PersonRc::new(name.clone()); // increase the reference count with .clone()
+        println!(
+            "Name = {}, name has has {} strong pointers",
+            name,
+            Rc::strong_count(&name)
+        ); // 2 strong pointers
         person.greet()
     }
-    println!("Name = {}, name has has {} strong pointers", name, Rc::strong_count(&name));  // 1 strong pointer
+    println!(
+        "Name = {}, name has has {} strong pointers",
+        name,
+        Rc::strong_count(&name)
+    ); // 1 strong pointer
 }
-
 
 pub fn main() {
     without_rc();

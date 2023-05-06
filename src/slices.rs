@@ -6,10 +6,9 @@ fn slices() {
 
     use_slice(&mut data[1..4]);
     // use_slice(&mut data);
-
 }
 
-fn use_slice(slice: &mut[i32]) {
+fn use_slice(slice: &mut [i32]) {
     println!("first elem = {}, len = {}", slice[0], slice.len());
 
     slice[0] = 4321;

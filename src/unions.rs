@@ -3,11 +3,11 @@
 
 union IntOrFloat {
     i: i32,
-    f: f32
+    f: f32,
 }
 
 fn unions() {
-    let mut iof = IntOrFloat { i: 123 };  // it would be unsafe to modify this union
+    let mut iof = IntOrFloat { i: 123 }; // it would be unsafe to modify this union
 
     unsafe {
         iof.i = 42;
@@ -22,8 +22,12 @@ fn unions() {
 fn process_value(iof: IntOrFloat) {
     unsafe {
         match iof {
-            IntOrFloat { i: 42 } => { println!("meaning of life"); }
-            IntOrFloat { f } => { println!("f32 = {}", f); }
+            IntOrFloat { i: 42 } => {
+                println!("meaning of life");
+            }
+            IntOrFloat { f } => {
+                println!("f32 = {}", f);
+            }
         }
     }
 }

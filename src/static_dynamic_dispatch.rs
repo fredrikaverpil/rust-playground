@@ -21,7 +21,7 @@ impl Printable for String {
 // Static dispatch, compilation-time, efficient call
 fn print_it<T: Printable>(z: T) {
     println!("{}", z.format());
-}  // monomorphisation (as it supports both i32 and String)
+} // monomorphisation (as it supports both i32 and String)
 
 // Dynamic dispatch, runtime, expensive call
 fn print_it_dynamic(z: &dyn Printable) {
@@ -50,8 +50,12 @@ fn dynamic_dispatch() {
     print_it_dynamic(&b);
 }
 
-struct Circle { radius: f64 }
-struct Square { side: f64 }
+struct Circle {
+    radius: f64,
+}
+struct Square {
+    side: f64,
+}
 
 trait Shape {
     fn area(&self) -> f64;
@@ -71,16 +75,15 @@ impl Shape for Square {
 
 fn dynamic_dispatch_only() {
     let shapes: [&dyn Shape; 4] = [
-        &Circle{radius: 1.0},
-        &Square{side: 3.0},
-        &Circle{radius: 2.0},
-        &Square{side: 4.0}
+        &Circle { radius: 1.0 },
+        &Square { side: 3.0 },
+        &Circle { radius: 2.0 },
+        &Square { side: 4.0 },
     ];
     for (i, shape) in shapes.iter().enumerate() {
-        println!("Shape #{} has area {}", i, shape.area());  // dynamic dispatch
+        println!("Shape #{} has area {}", i, shape.area()); // dynamic dispatch
     }
 }
-
 
 pub fn main() {
     // solve the same problem using either;

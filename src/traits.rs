@@ -1,8 +1,5 @@
-
-
 trait Animal {
-
-    fn create(name: &'static str) -> Self;  // static function retuning the implementor
+    fn create(name: &'static str) -> Self; // static function retuning the implementor
 
     fn name(&self) -> &'static str;
 
@@ -12,16 +9,16 @@ trait Animal {
 }
 
 struct Human {
-    name: &'static str
+    name: &'static str,
 }
 
 struct Cat {
-    name: &'static str
+    name: &'static str,
 }
 
 impl Animal for Human {
     fn create(name: &'static str) -> Human {
-        Human {name: name}
+        Human { name: name }
     }
 
     fn name(&self) -> &'static str {
@@ -29,13 +26,13 @@ impl Animal for Human {
     }
 
     fn talk(&self) {
-        println!("{} says hello", self.name );
+        println!("{} says hello", self.name);
     }
 }
 
 impl Animal for Cat {
     fn create(name: &'static str) -> Cat {
-        Cat {name: name}
+        Cat { name: name }
     }
 
     fn name(&self) -> &'static str {
@@ -43,7 +40,7 @@ impl Animal for Cat {
     }
 
     fn talk(&self) {
-        println!("{} says meow", self.name );
+        println!("{} says meow", self.name);
     }
 }
 
@@ -54,22 +51,23 @@ trait Summable<T> {
 impl Summable<i32> for Vec<i32> {
     fn sum(&self) -> i32 {
         let mut result: i32 = 0;
-        for x in self { result += *x; }
+        for x in self {
+            result += *x;
+        }
         return result;
     }
 }
 
 fn traits() {
     // let h = Human {name: "John"};
-    let h: Human = Animal::create("John");  // call create instead!
+    let h: Human = Animal::create("John"); // call create instead!
     h.talk();
 
-    let c = Cat {name: "Misty"};
+    let c = Cat { name: "Misty" };
     c.talk();
 
     let a = vec![1, 2, 3];
     println!("sum = {}", a.sum());
-
 }
 
 pub fn main() {
